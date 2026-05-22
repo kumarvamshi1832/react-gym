@@ -8,45 +8,45 @@ function Login() {
   const navigate = useNavigate();
 
   const loginLogics = (loginData) => {
-  const registeredUsers =
-    JSON.parse(localStorage.getItem("users")) || [];
+    const registeredUsers =
+      JSON.parse(localStorage.getItem("users")) || [];
 
-  if (registeredUsers.length === 0) {
-    alert("No users found. Please register first.");
-    return;
-  }
+    if (registeredUsers.length === 0) {
+      alert("No users found. Please register first.");
+      return;
+    }
 
-  const validUser = registeredUsers.find(
-    (user) =>
-      user.email.trim().toLowerCase() ===
-        loginData.email.trim().toLowerCase() &&
-      user.password === loginData.password
-  );
+    const email = loginData.email.trim().toLowerCase();
+    const password = loginData.password.trim();
 
-  if (validUser) {
-    alert("Login Successful");
+    const validUser = registeredUsers.find((user) => {
+      return (
+        user.email?.trim().toLowerCase() === email &&
+        user.password?.trim() === password
+      );
+    });
 
-    localStorage.setItem(
-      "loggedInUser",
-      JSON.stringify(validUser)
-    );
+    if (validUser) {
+      alert("Login Successful");
 
-    navigate("/orders");
-  } else {
-    alert("Invalid email or password");
-  }
-};
+      localStorage.setItem(
+        "loggedInUser",
+        JSON.stringify(validUser)
+      );
+
+      navigate("/orders");
+    } else {
+      alert("Invalid email or password");
+    }
+  };
 
   return (
     <div className="login-container">
-
       <div className="login-card">
-
         <h1>Welcome Back</h1>
-        <p>Login to continue your fitness journey 💪</p>
+        <p>Login to continue 💪</p>
 
         <form onSubmit={handleSubmit(loginLogics)}>
-
           <input
             type="email"
             placeholder="Email Address"
@@ -59,14 +59,9 @@ function Login() {
             {...register("password", { required: true })}
           />
 
-          <button type="submit">
-            Login
-          </button>
-
+          <button type="submit">Login</button>
         </form>
-
       </div>
-
     </div>
   );
 }

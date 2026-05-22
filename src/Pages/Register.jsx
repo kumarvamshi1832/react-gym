@@ -6,18 +6,15 @@ function Register() {
   const { register, handleSubmit, reset } = useForm();
 
   const registerLogics = (userdata) => {
-    // 🔥 Get existing users OR empty array
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    // 🔥 Create clean user object
     const newUser = {
       name: userdata.name.trim(),
       email: userdata.email.trim().toLowerCase(),
       phone: userdata.phone,
-      password: userdata.password,
+      password: userdata.password.trim(),
     };
 
-    // 🔴 OPTIONAL (PREVENT DUPLICATE EMAIL)
     const alreadyExists = users.find(
       (u) => u.email === newUser.email
     );
@@ -27,17 +24,13 @@ function Register() {
       return;
     }
 
-    // 🔥 Add new user
     users.push(newUser);
 
-    // 🔥 Save to localStorage
     localStorage.setItem("users", JSON.stringify(users));
 
-    console.log("Users saved:", users);
-
     alert("Registration successful!");
+    console.log("Saved Users:", users);
 
-    // reset form
     reset();
   };
 
@@ -45,7 +38,7 @@ function Register() {
     <div className="register-container">
       <div className="register-card">
         <h1>Create Account</h1>
-        <p>Join the fitness journey today 💪</p>
+        <p>Join the fitness journey 💪</p>
 
         <form onSubmit={handleSubmit(registerLogics)}>
           <input

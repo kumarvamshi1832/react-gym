@@ -1,14 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import cartReducer from "./cartSlice";
-import cuponReducer from "./CouponSlice";
+import couponReducer from "./couponSlice";
 import ordersReducer from "./OrderSlice";
-
 
 const store = configureStore({
   reducer: {
     cart: cartReducer,
-    cuponDetails: cuponReducer,
+    coupon: couponReducer,
     orders: ordersReducer,
   },
 });
