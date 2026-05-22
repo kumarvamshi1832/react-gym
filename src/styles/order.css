@@ -1,64 +1,266 @@
-.orders-container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #0f172a;
-  padding: 20px;
+/* =========================
+   ORDERS PAGE
+========================= */
+
+.orders-container{
+  width:100%;
+  min-height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:140px 7% 80px;
+
+  background:
+  radial-gradient(circle at top left,#312e81 0%,transparent 25%),
+  radial-gradient(circle at bottom right,#ec4899 0%,transparent 20%),
+  #0b0f19;
+
+  overflow:hidden;
 }
 
-.order-card {
-  display: flex;
-  gap: 25px;
-  background: #111827;
-  padding: 25px;
-  border-radius: 16px;
-  max-width: 800px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  align-items: center;
+/* =========================
+   PREMIUM ORDER CARD
+========================= */
+
+.order-card{
+  width:100%;
+  max-width:1200px;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  align-items:center;
+
+  gap:50px;
+
+  padding:40px;
+
+  border-radius:36px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  backdrop-filter:blur(18px);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:0.4s ease;
 }
 
-.order-img {
-  width: 280px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 12px;
+/* Hover Effect */
+.order-card:hover{
+  transform:
+  translateY(-8px);
+
+  box-shadow:
+  0 25px 50px rgba(0,0,0,0.45);
 }
 
-.order-content {
-  color: white;
+/* Glow Effect */
+.order-card::before{
+  content:"";
+
+  position:absolute;
+
+  top:-120px;
+  right:-120px;
+
+  width:300px;
+  height:300px;
+
+  background:#7c3aed;
+
+  opacity:0.18;
+
+  filter:blur(130px);
+
+  border-radius:50%;
 }
 
-.order-content h3 {
-  font-size: 22px;
-  color: #22c55e;
-  margin-bottom: 8px;
+/* =========================
+   IMAGE SECTION
+========================= */
+
+.order-img{
+  width:100%;
+  height:550px;
+
+  object-fit:cover;
+
+  border-radius:30px;
+
+  transition:0.5s ease;
 }
 
-.order-content h2 {
-  font-size: 26px;
-  margin-bottom: 10px;
+/* Image Hover */
+.order-card:hover .order-img{
+  transform:scale(1.03);
 }
 
-.order-content p {
-  font-size: 15px;
-  color: #cbd5e1;
-  margin-bottom: 20px;
-  line-height: 1.5;
+/* =========================
+   CONTENT SECTION
+========================= */
+
+.order-content{
+  position:relative;
+  z-index:2;
 }
 
-.order-btn {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  background: #22c55e;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+/* Small Heading */
+.order-content h3{
+  font-size:1rem;
+  font-weight:700;
+
+  color:#a855f7;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  margin-bottom:16px;
 }
 
-.order-btn:hover {
-  background: #16a34a;
-  transform: scale(1.05);
+/* Main Heading */
+.order-content h2{
+  font-size:3.5rem;
+  font-weight:800;
+
+  line-height:1.1;
+
+  margin-bottom:25px;
+
+  color:white;
+}
+
+/* Description */
+.order-content p{
+  font-size:1.05rem;
+
+  color:#d1d5db;
+
+  line-height:1.9;
+
+  margin-bottom:35px;
+
+  max-width:520px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.order-btn{
+  padding:16px 34px;
+
+  border:none;
+  border-radius:16px;
+
+  background:
+  linear-gradient(135deg,#7c3aed,#ff4d6d);
+
+  color:white;
+
+  font-size:1rem;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.35s ease;
+
+  box-shadow:
+  0 12px 28px rgba(124,58,237,0.35);
+}
+
+/* Hover */
+.order-btn:hover{
+  transform:
+  translateY(-4px)
+  scale(1.03);
+
+  box-shadow:
+  0 18px 40px rgba(124,58,237,0.55);
+}
+
+/* =========================
+   TABLET VIEW
+========================= */
+
+@media(max-width:992px){
+
+  .order-card{
+    grid-template-columns:1fr;
+
+    padding:30px;
+  }
+
+  .order-img{
+    height:450px;
+  }
+
+  .order-content{
+    text-align:center;
+  }
+
+  .order-content p{
+    margin:auto auto 35px;
+  }
+
+}
+
+/* =========================
+   MOBILE VIEW
+========================= */
+
+@media(max-width:768px){
+
+  .orders-container{
+    padding:120px 5% 60px;
+  }
+
+  .order-card{
+    padding:22px;
+    gap:30px;
+  }
+
+  .order-img{
+    height:320px;
+    border-radius:24px;
+  }
+
+  .order-content h2{
+    font-size:2.4rem;
+  }
+
+  .order-content p{
+    font-size:0.96rem;
+    line-height:1.7;
+  }
+
+  .order-btn{
+    width:100%;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:500px){
+
+  .order-content h2{
+    font-size:2rem;
+  }
+
+  .order-content h3{
+    font-size:0.85rem;
+  }
+
 }

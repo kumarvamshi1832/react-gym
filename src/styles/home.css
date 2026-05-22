@@ -1,136 +1,311 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* =========================
+   PREMIUM HERO SECTION
+========================= */
 
 .hero{
-  height: 100vh;
+  width:100%;
+  height:100vh;
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* Background Image */
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 
-  transition: background-image 2s ease-in-out;
+  /* Center Content */
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
 
-  position: relative;
+  /* Smooth Image Transition */
+  transition:background-image 1s ease-in-out;
+
+  position:relative;
+  overflow:hidden;
 }
+
+/* =========================
+   DARK OVERLAY
+========================= */
 
 .overlay{
-  width: 100%;
-  height: 100%;
+  width:100%;
+  height:100%;
 
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  padding:0 8%;
+
+  /* Premium Dark Gradient */
   background:
   linear-gradient(
-    rgba(0,0,0,0.75),
-    rgba(0,0,0,0.65)
+    90deg,
+    rgba(0,0,0,0.82) 0%,
+    rgba(0,0,0,0.65) 35%,
+    rgba(0,0,0,0.35) 60%,
+    rgba(0,0,0,0.15) 100%
   );
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-
-  color: white;
-
-  padding: 20px;
 }
+
+/* =========================
+   MAIN HEADING
+========================= */
 
 .overlay h1{
-  font-size: 85px;
+  font-size:5rem;
+  font-weight:800;
+  line-height:1.1;
 
-  line-height: 1.1;
+  max-width:700px;
 
-  margin-bottom: 25px;
+  color:white;
 
-  font-weight: 800;
+  letter-spacing:-2px;
 
-  text-transform: uppercase;
-
-  letter-spacing: 3px;
-
-  text-shadow:
-  0 0 15px rgba(255,77,77,0.4),
-  4px 4px 15px black;
+  animation:fadeUp 1s ease;
 }
+
+/* Gradient Highlight Effect */
+.overlay h1 span{
+  background:linear-gradient(135deg,#7c3aed,#ff4d6d);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* =========================
+   SUBTITLE
+========================= */
 
 .overlay p{
-  width: 60%;
+  margin-top:25px;
 
-  font-size: 24px;
+  max-width:600px;
 
-  line-height: 1.8;
+  color:#d1d5db;
 
-  margin-bottom: 40px;
+  font-size:1.2rem;
+  line-height:1.9;
 
-  color: #d9d9d9;
+  animation:fadeUp 1.3s ease;
 }
+
+/* =========================
+   BUTTONS SECTION
+========================= */
 
 .buttons{
-  display: flex;
+  display:flex;
+  align-items:center;
+  gap:20px;
 
-  gap: 25px;
+  margin-top:40px;
+
+  animation:fadeUp 1.5s ease;
 }
 
+/* =========================
+   START TRAINING BUTTON
+========================= */
+
 .start-btn{
-  padding: 16px 38px;
+  padding:16px 36px;
 
-  border: none;
-
-  border-radius: 12px;
+  border:none;
+  border-radius:16px;
 
   background:
-  linear-gradient(
-    135deg,
-    #ff4d4d,
-    #ff1a1a
-  );
+  linear-gradient(135deg,#7c3aed,#ff4d6d);
 
-  color: white;
+  color:white;
 
-  font-size: 18px;
-  font-weight: bold;
+  font-size:1rem;
+  font-weight:600;
 
-  cursor: pointer;
+  cursor:pointer;
 
-  transition: 0.4s;
+  transition:0.35s ease;
 
   box-shadow:
-  0 0 20px rgba(255,77,77,0.4);
+  0 12px 30px rgba(124,58,237,0.45);
 }
 
 .start-btn:hover{
-  transform: translateY(-5px) scale(1.05);
+  transform:
+  translateY(-4px)
+  scale(1.03);
 
   box-shadow:
-  0 0 30px rgba(255,77,77,0.7);
+  0 18px 40px rgba(124,58,237,0.65);
 }
 
+/* =========================
+   EXPLORE BUTTON
+========================= */
+
 .explore-btn{
-  padding: 16px 38px;
+  padding:16px 36px;
 
-  border-radius: 12px;
+  border-radius:16px;
 
-  border: 2px solid white;
+  border:1px solid rgba(255,255,255,0.2);
 
-  background: transparent;
+  background:rgba(255,255,255,0.08);
 
-  color: white;
+  backdrop-filter:blur(12px);
 
-  font-size: 18px;
-  font-weight: bold;
+  color:white;
 
-  cursor: pointer;
+  font-size:1rem;
+  font-weight:500;
 
-  transition: 0.4s;
+  cursor:pointer;
+
+  transition:0.35s ease;
 }
 
 .explore-btn:hover{
-  background: white;
+  background:rgba(255,255,255,0.18);
 
-  color: black;
+  transform:
+  translateY(-4px)
+  scale(1.02);
+}
 
-  transform: translateY(-5px);
+/* =========================
+   HERO GLOW EFFECTS
+========================= */
+
+.hero::before{
+  content:"";
+
+  position:absolute;
+
+  top:-150px;
+  right:-150px;
+
+  width:400px;
+  height:400px;
+
+  background:#7c3aed;
+
+  opacity:0.25;
+
+  filter:blur(140px);
+
+  border-radius:50%;
+}
+
+.hero::after{
+  content:"";
+
+  position:absolute;
+
+  bottom:-120px;
+  left:-120px;
+
+  width:320px;
+  height:320px;
+
+  background:#ff4d6d;
+
+  opacity:0.22;
+
+  filter:blur(120px);
+
+  border-radius:50%;
+}
+
+/* =========================
+   FADE UP ANIMATION
+========================= */
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+  .overlay{
+    padding:0 6%;
+  }
+
+  .overlay h1{
+    font-size:4rem;
+  }
+
+  .overlay p{
+    font-size:1.05rem;
+  }
+
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .hero{
+    justify-content:center;
+    text-align:center;
+  }
+
+  .overlay{
+    align-items:center;
+    padding:0 5%;
+  }
+
+  .overlay h1{
+    font-size:2.9rem;
+    max-width:100%;
+  }
+
+  .overlay p{
+    font-size:1rem;
+    max-width:100%;
+  }
+
+  .buttons{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .start-btn,
+  .explore-btn{
+    width:100%;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:500px){
+
+  .overlay h1{
+    font-size:2.3rem;
+    line-height:1.2;
+  }
+
+  .overlay p{
+    font-size:0.92rem;
+    line-height:1.7;
+  }
+
 }

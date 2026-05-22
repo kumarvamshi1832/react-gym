@@ -1,147 +1,391 @@
-/* MAIN CONTAINER */
+/* =========================
+   MAIN CART LAYOUT
+========================= */
 
 .cart-container{
-  padding: 40px;
-  min-height: 100vh;
-  background: #f5f7fb;
-  font-family: Arial, sans-serif;
+  width:100%;
+  min-height:100vh;
+
+  padding:170px 6% 60px;
+
+  background:
+  radial-gradient(circle at top left,#312e81 0%,transparent 25%),
+  radial-gradient(circle at bottom right,#7c3aed 0%,transparent 20%),
+  #0b0f19;
+
+  color:white;
+
+  display:grid;
+
+  grid-template-columns:
+  1.5fr 0.7fr;
+
+  gap:35px;
+
+  align-items:start;
 }
 
-/* CLEAR BUTTON */
+/* =========================
+   CLEAR BUTTON
+========================= */
 
 .clear-btn{
-  padding: 12px 22px;
-  border: none;
-  border-radius: 10px;
-  background: crimson;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 30px;
-  transition: 0.3s;
+  position:fixed;
+
+  top:100px;
+  left:6%;
+
+  z-index:100;
+
+  padding:14px 28px;
+
+  border:none;
+  border-radius:14px;
+
+  background:
+  linear-gradient(135deg,#ef4444,#dc2626);
+
+  color:white;
+
+  font-size:1rem;
+  font-weight:600;
+
+  cursor:pointer;
+
+  box-shadow:
+  0 10px 25px rgba(239,68,68,0.35);
+
+  transition:0.3s;
 }
 
 .clear-btn:hover{
-  transform: scale(1.05);
-  background: darkred;
+  transform:translateY(-3px);
 }
 
-/* EMPTY CART */
-
-.empty-cart{
-  text-align: center;
-  margin-top: 100px;
-}
-
-.empty-cart h3{
-  font-size: 35px;
-  color: #222;
-}
-
-.empty-cart h2{
-  color: gray;
-  margin-top: 10px;
-}
-
-/* PRODUCTS GRID */
+/* =========================
+   PRODUCTS
+========================= */
 
 .cart-products{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  list-style: none;
-  padding: 0;
+  list-style:none;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:25px;
 }
 
-/* PRODUCT CARD */
+/* =========================
+   SMALL PROFESSIONAL CARD
+========================= */
 
 .cart-card{
-  background: white;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: 0.3s;
-  text-align: center;
+  display:grid;
+
+  grid-template-columns:
+  180px 1fr;
+
+  gap:25px;
+
+  padding:20px;
+
+  border-radius:26px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(18px);
+
+  transition:0.35s ease;
 }
 
 .cart-card:hover{
-  transform: translateY(-8px);
+  transform:translateY(-5px);
+
+  box-shadow:
+  0 18px 40px rgba(0,0,0,0.4);
 }
 
-/* IMAGE */
+/* =========================
+   IMAGE
+========================= */
 
 .cart-card img{
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 15px;
+  width:100%;
+  height:180px;
+
+  object-fit:cover;
+
+  border-radius:20px;
 }
 
-/* TEXT */
+/* =========================
+   TEXT
+========================= */
 
 .cart-card h1{
-  font-size: 24px;
-  margin-top: 15px;
-  color: #222;
+  font-size:1.3rem;
+
+  margin-bottom:10px;
 }
 
 .cart-card h2{
-  font-size: 16px;
-  color: gray;
-  margin: 10px 0;
+  font-size:0.92rem;
+
+  color:#d1d5db;
+
+  line-height:1.7;
+
+  margin-bottom:14px;
 }
 
 .cart-card h3{
-  color: green;
-  font-size: 24px;
-  margin-bottom: 15px;
+  color:#a855f7;
+
+  margin-bottom:20px;
 }
 
-/* QUANTITY SECTION */
+/* =========================
+   QTY
+========================= */
 
 .qty-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+
+  margin-bottom:20px;
 }
 
 .qty-container button{
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 50%;
-  background: #111827;
-  color: white;
-  font-size: 22px;
-  cursor: pointer;
-  transition: 0.3s;
+  width:40px;
+  height:40px;
+
+  border:none;
+  border-radius:12px;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  color:white;
+
+  font-size:1.2rem;
+
+  cursor:pointer;
 }
 
 .qty-container button:hover{
-  background: #2563eb;
-  transform: scale(1.1);
+  background:
+  linear-gradient(135deg,#7c3aed,#ff4d6d);
 }
 
 .qty-container h4{
-  font-size: 22px;
+  font-size:1.1rem;
 }
 
-/* REMOVE BUTTON */
+/* =========================
+   REMOVE BUTTON
+========================= */
 
 .remove-btn{
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  background: #ef4444;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
+  padding:12px 20px;
+
+  border:none;
+  border-radius:14px;
+
+  background:
+  linear-gradient(135deg,#ef4444,#dc2626);
+
+  color:white;
+
+  font-size:0.95rem;
+  font-weight:600;
+
+  cursor:pointer;
+
+  width:fit-content;
 }
 
-.remove-btn:hover{
-  background: #b91c1c;
+/* =========================
+   BILL BOX
+========================= */
+
+.billbox{
+  position:sticky;
+
+  top:120px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(18px);
+
+  border-radius:30px;
+
+  padding:30px;
+
+  height:fit-content;
+}
+
+/* Heading */
+.billbox h3{
+  font-size:1.8rem;
+
+  margin-bottom:25px;
+}
+
+/* =========================
+   DISCOUNT BUTTONS
+========================= */
+
+.discountBtns{
+  display:flex;
+
+  gap:10px;
+
+  margin-bottom:25px;
+}
+
+.discountBtns button{
+  flex:1;
+
+  padding:12px;
+
+  border:none;
+  border-radius:12px;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  color:white;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.discountBtns button:hover{
+  background:
+  linear-gradient(135deg,#7c3aed,#ff4d6d);
+}
+
+/* =========================
+   COUPON
+========================= */
+
+.couponBox{
+  margin-bottom:25px;
+}
+
+.couponBox input{
+  width:100%;
+
+  padding:14px;
+
+  border:none;
+  outline:none;
+
+  border-radius:14px;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  color:white;
+
+  margin-bottom:14px;
+}
+
+.couponBox button{
+  width:100%;
+
+  padding:14px;
+
+  border:none;
+  border-radius:14px;
+
+  background:
+  linear-gradient(135deg,#7c3aed,#ff4d6d);
+
+  color:white;
+
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+/* =========================
+   BILL DETAILS
+========================= */
+
+.billbox h2{
+  font-size:1rem;
+
+  margin-bottom:16px;
+
+  color:#d1d5db;
+}
+
+.billbox h1{
+  margin-top:25px;
+
+  font-size:2rem;
+
+  color:#22c55e;
+}
+
+/* =========================
+   EMPTY CART
+========================= */
+
+.empty-cart{
+  grid-column:1/-1;
+
+  text-align:center;
+
+  padding:120px 20px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:992px){
+
+  .cart-container{
+    grid-template-columns:1fr;
+  }
+
+  .billbox{
+    position:static;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .cart-card{
+    grid-template-columns:1fr;
+  }
+
+  .cart-card img{
+    height:240px;
+  }
+
+  .discountBtns{
+    flex-direction:column;
+  }
+
+  .clear-btn{
+    position:static;
+
+    margin-bottom:20px;
+  }
+
 }

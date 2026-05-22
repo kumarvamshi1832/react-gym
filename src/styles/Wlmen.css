@@ -1,47 +1,392 @@
-.wl-women-page {
-  padding-top: 120px;
-  height: 100vh;
+/* =========================
+   WL MEN PAGE
+========================= */
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.wl-container{
+  width:100%;
+  min-height:100vh;
 
-  font-size: 32px;
-  font-weight: 800;
+  padding:120px 7% 60px;
 
-  color: #ff2d7a;
+  background:
+  radial-gradient(circle at top left,#172554 0%,transparent 25%),
+  radial-gradient(circle at bottom right,#2563eb 0%,transparent 20%),
+  #0b0f19;
 
-  /* premium background */
-  background: radial-gradient(circle at top,
-      #1a0b2e,
-      #0b0f2a 60%,
-      #050814);
-
-  position: relative;
-  overflow: hidden;
+  color:white;
 }
 
-/* glowing pink gym vibe effect */
-.wl-women-page::before {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
+/* =========================
+   DAY BUTTONS
+========================= */
 
-  background: #ff2d7a;
-  filter: blur(120px);
-  opacity: 0.25;
+.days-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:18px;
 
-  top: 10%;
-  left: 20%;
-
-  animation: floatGlow 6s infinite ease-in-out;
+  margin-bottom:50px;
 }
 
-/* floating effect */
-@keyframes floatGlow {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-40px); }
-  100% { transform: translateY(0px); }
+/* Day Button */
+.days-buttons button{
+  padding:14px 26px;
+
+  border:none;
+  border-radius:16px;
+
+  background:
+  rgba(255,255,255,0.06);
+
+  backdrop-filter:blur(12px);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  color:white;
+
+  font-size:1rem;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.35s ease;
+}
+
+/* Hover */
+.days-buttons button:hover{
+  transform:
+  translateY(-3px);
+
+  background:
+  rgba(255,255,255,0.12);
+}
+
+/* Active Day */
+.days-buttons .active{
+  background:
+  linear-gradient(135deg,#2563eb,#06b6d4);
+
+  box-shadow:
+  0 12px 30px rgba(37,99,235,0.4);
+
+  border:none;
+}
+
+/* =========================
+   MAIN GRID
+========================= */
+
+.main-content{
+  display:grid;
+
+  grid-template-columns:
+  1.3fr 0.9fr;
+
+  gap:35px;
+}
+
+/* =========================
+   PANELS
+========================= */
+
+.workout-panel,
+.diet-panel{
+  background:
+  rgba(255,255,255,0.05);
+
+  backdrop-filter:blur(18px);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  border-radius:30px;
+
+  padding:35px;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+/* Blue Glow Effect */
+.workout-panel::before,
+.diet-panel::before{
+  content:"";
+
+  position:absolute;
+
+  top:-100px;
+  right:-100px;
+
+  width:260px;
+  height:260px;
+
+  background:#2563eb;
+
+  opacity:0.16;
+
+  filter:blur(120px);
+
+  border-radius:50%;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+.workout-heading,
+.diet-heading{
+  font-size:0.95rem;
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  color:#38bdf8;
+
+  margin-bottom:18px;
+}
+
+.workout-title{
+  font-size:2.3rem;
+  font-weight:800;
+
+  margin-bottom:35px;
+
+  line-height:1.2;
+}
+
+/* =========================
+   EXERCISE CARD
+========================= */
+
+.exercise-card{
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  border-radius:22px;
+
+  padding:22px;
+
+  margin-bottom:22px;
+
+  transition:0.35s ease;
+}
+
+/* Hover */
+.exercise-card:hover{
+  transform:
+  translateY(-5px);
+
+  background:
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 18px 35px rgba(0,0,0,0.35);
+}
+
+/* Exercise Name */
+.exercise-name{
+  font-size:1.3rem;
+  font-weight:700;
+
+  margin-bottom:12px;
+}
+
+/* Sets */
+.exercise-sets{
+  color:#d1d5db;
+
+  margin-bottom:18px;
+
+  font-size:1rem;
+}
+
+/* =========================
+   VIDEO BUTTON
+========================= */
+
+.video-btn{
+  padding:12px 22px;
+
+  border:none;
+  border-radius:14px;
+
+  background:
+  linear-gradient(135deg,#2563eb,#06b6d4);
+
+  color:white;
+
+  font-size:0.95rem;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.35s ease;
+
+  box-shadow:
+  0 10px 25px rgba(37,99,235,0.35);
+}
+
+/* Hover */
+.video-btn:hover{
+  transform:
+  translateY(-3px)
+  scale(1.02);
+
+  box-shadow:
+  0 16px 32px rgba(37,99,235,0.55);
+}
+
+/* =========================
+   VIDEO PLAYER
+========================= */
+
+.video-container{
+  margin-top:35px;
+
+  overflow:hidden;
+
+  border-radius:24px;
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  box-shadow:
+  0 20px 40px rgba(0,0,0,0.45);
+}
+
+.video-container iframe{
+  display:block;
+}
+
+/* =========================
+   MEAL BLOCKS
+========================= */
+
+.meal-block{
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  border-radius:24px;
+
+  padding:24px;
+
+  margin-bottom:24px;
+
+  transition:0.35s ease;
+}
+
+/* Hover */
+.meal-block:hover{
+  transform:
+  translateY(-5px);
+
+  background:
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 18px 35px rgba(0,0,0,0.35);
+}
+
+/* Meal Title */
+.meal-title{
+  font-size:0.9rem;
+  font-weight:700;
+
+  letter-spacing:1.5px;
+
+  color:#38bdf8;
+
+  margin-bottom:12px;
+}
+
+/* Meal Name */
+.meal-name{
+  font-size:1.2rem;
+  font-weight:700;
+
+  line-height:1.6;
+
+  margin-bottom:12px;
+}
+
+/* Calories */
+.meal-calories{
+  color:#d1d5db;
+
+  font-size:0.95rem;
+}
+
+/* =========================
+   TABLET VIEW
+========================= */
+
+@media(max-width:992px){
+
+  .main-content{
+    grid-template-columns:1fr;
+  }
+
+}
+
+/* =========================
+   MOBILE VIEW
+========================= */
+
+@media(max-width:768px){
+
+  .wl-container{
+    padding:110px 5% 50px;
+  }
+
+  .workout-panel,
+  .diet-panel{
+    padding:25px;
+  }
+
+  .workout-title{
+    font-size:1.9rem;
+  }
+
+  .exercise-name{
+    font-size:1.1rem;
+  }
+
+  .video-container iframe{
+    height:250px;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:500px){
+
+  .days-buttons{
+    gap:12px;
+  }
+
+  .days-buttons button{
+    width:90px;
+    padding:12px 0;
+  }
+
+  .workout-title{
+    font-size:1.6rem;
+  }
+
+  .meal-name{
+    font-size:1rem;
+  }
+
 }
