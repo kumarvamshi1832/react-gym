@@ -6,6 +6,13 @@ import { addtocart } from "./CartSlice";
 
 import "../styles/Wlcart.css";
 
+import {
+  ToastContainer,
+  toast,
+} from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 function Wlcart() {
 
   const dispatch = useDispatch();
@@ -87,7 +94,10 @@ function Wlcart() {
 
             <button
               onClick={() =>
-                dispatch(addtocart(item))
+                {dispatch(addtocart(item));
+                  toast.success(`product ${item.name} added to cart sucessfully!`);
+                }
+                
               }
             >
               Add to Cart 🛒

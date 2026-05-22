@@ -24,8 +24,13 @@ import Wlwomen from "./Pages/Wlwomen";
 import Cart from "./Pages/Cart";
 import Wlcart from "./Pages/Wlcart";
 
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 // Global Premium CSS
 import "./App.css";
+import Mypurchase from "./Pages/Mypurchase";
 
 function App() {
 
@@ -33,6 +38,11 @@ function App() {
 
     // Main App Container
     <div className="app-container">
+
+      <ToastContainer
+  position="top-right"
+  autoClose={3000}
+/>
 
       {/* Top Navigation Bar */}
       <Navbar />
@@ -65,6 +75,7 @@ function App() {
 
         {/* Product Cart */}
         <Route path="/wlcart" element={<Wlcart />} />
+        <Route path="/mypurchase" element={<Mypurchase />} />
 
       </Routes>
 

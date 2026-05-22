@@ -7,6 +7,13 @@ function Orders() {
   return (
     <div className="orders-container">
 
+      <button
+            className="order-btn"
+            onClick={() => navigate("/mypurchase")}
+          >
+            Explore purchases
+          </button>
+
       <div className="order-card">
 
         <img
