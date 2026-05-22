@@ -1,0 +1,47 @@
+.wl-women-page {
+  padding-top: 120px;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-size: 32px;
+  font-weight: 800;
+
+  color: #ff2d7a;
+
+  /* premium background */
+  background: radial-gradient(circle at top,
+      #1a0b2e,
+      #0b0f2a 60%,
+      #050814);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* glowing pink gym vibe effect */
+.wl-women-page::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+
+  background: #ff2d7a;
+  filter: blur(120px);
+  opacity: 0.25;
+
+  top: 10%;
+  left: 20%;
+
+  animation: floatGlow 6s infinite ease-in-out;
+}
+
+/* floating effect */
+@keyframes floatGlow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-40px); }
+  100% { transform: translateY(0px); }
+}

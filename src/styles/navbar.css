@@ -1,0 +1,151 @@
+.navbar{
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 22px 70px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+
+ background:
+linear-gradient(
+  135deg,
+  #001f4d,
+  #003d99,
+  #005ce6
+);
+
+  backdrop-filter: blur(14px);
+
+  border-bottom:
+  1px solid rgba(255,77,77,0.15);
+
+  box-shadow:
+  0 8px 30px rgba(0,0,0,0.55);
+}
+
+/* ================= LOGO ================= */
+
+.logo{
+  font-size: 34px;
+
+  font-weight: 800;
+
+  color: white;
+
+  letter-spacing: 3px;
+
+  cursor: pointer;
+
+  text-transform: uppercase;
+
+  transition: 0.3s;
+}
+
+.logo span{
+  color: #ff4d4d;
+
+  text-shadow:
+  0 0 12px rgba(255,77,77,0.7);
+}
+
+.logo:hover{
+  transform: scale(1.05);
+}
+
+/* ================= NAV LINKS ================= */
+
+.nav-links{
+  display: flex;
+
+  align-items: center;
+
+  list-style: none;
+
+  gap: 40px;
+}
+
+.nav-links li{
+  position: relative;
+}
+
+.nav-links a{
+  text-decoration: none;
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  transition: 0.3s;
+
+  position: relative;
+}
+
+/* Hover Color */
+
+.nav-links a:hover{
+  color: #ff4d4d;
+}
+
+/* Animated Underline */
+
+.nav-links a::after{
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0%;
+  height: 2px;
+
+  background: #ff4d4d;
+
+  transition: 0.4s;
+}
+
+.nav-links a:hover::after{
+  width: 100%;
+}
+
+/* ================= LOGIN BUTTON STYLE ================= */
+
+.nav-links li:last-child a{
+  padding: 10px 22px;
+
+  border-radius: 10px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #ff4d4d,
+    #ff1a1a
+  );
+
+  box-shadow:
+  0 0 15px rgba(255,77,77,0.4);
+}
+
+.nav-links li:last-child a:hover{
+  color: white;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+  0 0 25px rgba(255,77,77,0.7);
+}
+
+.nav-links li:last-child a::after{
+  display: none;
+}

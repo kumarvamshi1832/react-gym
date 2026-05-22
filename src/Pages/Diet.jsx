@@ -1,0 +1,5 @@
+function Diet() {
+  return <h1>Workouts</h1>;
+}
+
+export default Diet;

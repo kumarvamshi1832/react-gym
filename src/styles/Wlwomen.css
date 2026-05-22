@@ -1,0 +1,229 @@
+/* PAGE */
+
+body {
+  margin: 0;
+  background: #050505;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.wl-container {
+  padding: 120px 25px 25px;
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f0f0f,
+      #161616,
+      #1d1d1d,
+      #111111
+    );
+
+  color: white;
+}
+
+
+/* DAY BUTTONS */
+
+.days-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  overflow-x: auto;
+}
+
+.days-buttons button {
+  background: #111;
+  color: white;
+  border: 1px solid #333;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 90px;
+  transition: 0.3s ease;
+}
+
+.days-buttons button:hover {
+  border-color: #e6ff00;
+  color: #e6ff00;
+}
+
+.days-buttons .active {
+  background: #e6ff00;
+  color: black;
+  border-color: #e6ff00;
+}
+
+/* MAIN LAYOUT */
+
+.main-content {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+
+/* LEFT PANEL */
+
+.workout-panel {
+  flex: 1;
+  min-width: 320px;
+  background: #101010;
+  border: 1px solid #222;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.workout-heading {
+  color: #666;
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.workout-title {
+  display: inline-block;
+  background: #e6ff00;
+  color: black;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+
+/* EXERCISE CARDS */
+
+.exercise-card {
+  background: #0b0b0b;
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 15px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.exercise-card:hover {
+  border-color: #e6ff00;
+  transform: scale(1.02);
+}
+
+.exercise-name {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.exercise-sets {
+  color: #777;
+  font-size: 14px;
+}
+
+
+/* RIGHT PANEL */
+
+.diet-panel {
+  flex: 1;
+  min-width: 320px;
+  background: #101010;
+  border: 1px solid #222;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.diet-heading {
+  color: #666;
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+
+/* MEAL BLOCKS */
+
+.meal-block {
+  border-bottom: 1px solid #1f1f1f;
+  padding: 18px 0;
+}
+
+.meal-title {
+  color: #e6ff00;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.meal-name {
+  font-size: 17px;
+}
+
+.meal-calories {
+  color: #777;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+/* MACROS SECTION */
+
+.macros {
+  margin-top: 30px;
+  background: #0b0b0b;
+  border-radius: 16px;
+  padding: 25px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.macro-number {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.macro-label {
+  color: #777;
+  margin-top: 5px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .days-buttons {
+    justify-content: center;
+  }
+
+}
+
+.video-btn {
+  margin-top: 10px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #e6ff00;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.video-btn:hover {
+  opacity: 0.9;
+}
+
+.video-container {
+  margin-top: 25px;
+  border-radius: 20px;
+  overflow: hidden;
+}

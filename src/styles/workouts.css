@@ -1,0 +1,97 @@
+/* Page Title */
+h1 {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 120px;
+  font-weight: bold;
+  color: #111;
+}
+
+/* Container */
+.workout-container {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Card Base */
+.card {
+  width: 350px;
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+/* Heading Base */
+.card h3 {
+  margin: 30px 0;
+  font-size: 30px;
+  font-weight: 800;
+  transition: 0.3s ease;
+}
+
+.card h2 {
+  margin: 30px 0;
+  font-size: 35px;
+  font-weight: 800;
+  transition: 0.3s ease;
+}
+
+.card p {
+  margin: 30px 0;
+  font-size: 20px;
+  font-weight: 100;
+  transition: 0.3s ease;
+}
+
+/* 🖤 Weight Loss & Weight Gain = Black */
+.card h3 {
+  color: #1a1a1a;
+}
+
+/* 💖 Women = Pink */
+.women h2 {
+  color: #ff2d7a;
+}
+
+/* 💙 Men = Blue */
+.men h2 {
+  color: #1e88e5;
+}
+
+/* Button */
+.card button {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #ff4d4d, #e60000);
+  transition: 0.3s ease;
+}
+
+/* Button Hover */
+.card button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #e60000, #b30000);
+}
