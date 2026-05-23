@@ -15,7 +15,7 @@ import {
 import { applyCupon } from "./CouponSlice";
 import { addOrder } from "./OrderSlice";
 
-import "../styles/Cart.css";
+import "../styles/cart.css";
 
 function Cart() {
   const cartItems = useSelector((state) => state.cart);

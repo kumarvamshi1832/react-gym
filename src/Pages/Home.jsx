@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../styles/Home.css";
+import "../styles/home.css";
 
 function Home() {
 
